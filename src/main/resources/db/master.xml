@@ -1,0 +1,14 @@
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd"
+        logicalFilePath="liquibase-master-changelog.xml">
+
+    <!--    <property name="uuid_type" value="uuid" dbms="postgresql"/>-->
+    <!--    <property name="uuid_function_gen" value="public.uuid_generate_v4()" dbms="postgresql"/>-->
+
+    <include file="db/changelog/202406031000-add-user-table.xml"/>
+
+
+</databaseChangeLog>
