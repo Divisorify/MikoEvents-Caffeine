@@ -9,6 +9,7 @@
     <!--    <property name="uuid_function_gen" value="public.uuid_generate_v4()" dbms="postgresql"/>-->
 
     <include file="db/changelog/202406031000-add-user-table.xml"/>
+    <include file="db/changelog/202406071000-add-tables.xml"/>
 
 
 </databaseChangeLog>

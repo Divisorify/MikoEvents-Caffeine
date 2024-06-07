@@ -9,18 +9,22 @@
     </changeSet>
     <changeSet author="Konrad" id="202406031000-1">
         <createTable tableName="users">
-            <column name="id" type="BIGINT">
+            <column autoIncrement="true" name="id" type="BIGINT">
                 <constraints nullable="false" primaryKey="true" primaryKeyName="usersPK"/>
             </column>
-            <column name="firstname" type="VARCHAR(255)"/>
-            <column name="lastname" type="VARCHAR(255)"/>
-            <column name="email" type="VARCHAR(255)">
+            <column name="firstname" type="VARCHAR2(255)">
                 <constraints nullable="false"/>
             </column>
-            <column name="password" type="VARCHAR(255)">
+            <column name="lastname" type="VARCHAR2(255)">
                 <constraints nullable="false"/>
             </column>
-            <column name="role" type="VARCHAR(255)">
+            <column name="email" type="VARCHAR2(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="password" type="VARCHAR2(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="role" type="VARCHAR2(255)">
                 <constraints nullable="false"/>
             </column>
         </createTable>
@@ -28,11 +32,11 @@
 
     <changeSet author="Konrad" id="202406031000-2">
         <createTable tableName="token">
-            <column name="id" type="BIGINT">
+            <column autoIncrement="true" name="id" type="BIGINT">
                 <constraints nullable="false" primaryKey="true" primaryKeyName="tokenPK"/>
             </column>
-            <column name="token" type="VARCHAR(255)"/>
-            <column name="tokenType" type="VARCHAR(255)"/>
+            <column name="token" type="VARCHAR2(255)"/>
+            <column name="tokenType" type="VARCHAR2(255)"/>
             <column name="revoked" type="BOOLEAN"/>
             <column name="expired" type="BOOLEAN"/>
 

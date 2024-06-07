@@ -1,0 +1,22 @@
+version: "3"
+services:
+  mikoevents-postgres:
+    image: postgres
+    restart: unless-stopped
+    ports:
+      - 127.0.0.1:5432:5432
+    env_file:
+      - .env
+    networks:
+      - mikoevents-network
+  mikoevents:
+    image: ae40084065c59db1d627dc4e4f58f6cc7e2711c7170c1de7ac14fc72e2c31933
+    restart: unless-stopped
+    ports:
+      - 8080:8080
+    networks:
+      - mikoevents-network
+
+networks:
+  mikoevents-network:
+    driver: bridge
