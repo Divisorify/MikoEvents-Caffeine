@@ -1,5 +1,6 @@
 package com.example.MikoEvents.category;
 
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -11,7 +12,9 @@ import lombok.Setter;
 @AllArgsConstructor
 public class CategoryDto {
 
-	private String categoryName;
+	@NotNull
+	private String name;
 
+	@NotNull
 	private CategoryType categoryType;
 }

@@ -2,10 +2,7 @@ package com.example.MikoEvents.event;
 
 import java.time.LocalDate;
 
-import com.example.MikoEvents.category.Category;
-import com.example.MikoEvents.location.Location;
-import com.example.MikoEvents.organizer.Organizer;
-
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -17,19 +14,27 @@ import lombok.Setter;
 @AllArgsConstructor
 public class EventDto {
 
-	private String eventName;
+	@NotNull
+	private String name;
 
+	@NotNull
 	private String description;
 
+	@NotNull
 	private LocalDate date;
 
+	@NotNull
 	private LocalDate dateFrom;
 
+	@NotNull
 	private LocalDate dateTo;
 
-	private Location location;
+	@NotNull
+	private Long locationId;
 
-	private Organizer organizer;
+	@NotNull
+	private Long organizerId;
 
-	private Category category;
+	@NotNull
+	private Long categoryId;
 }

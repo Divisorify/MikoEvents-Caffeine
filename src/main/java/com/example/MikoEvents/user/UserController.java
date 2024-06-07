@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
 
 @RestController
@@ -17,6 +18,7 @@ public class UserController {
 
 	private final UserService userService;
 
+	@ApiOperation(value = "Zmiana hasła")
 	@PatchMapping
 	public ResponseEntity<?> changePassword(
 			@RequestBody ChangePasswordRequest request,

@@ -1,5 +1,6 @@
 package com.example.MikoEvents.location;
 
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -11,11 +12,15 @@ import lombok.Setter;
 @AllArgsConstructor
 public class LocationDto {
 
-	private String locationName;
+	@NotNull
+	private String name;
 
+	@NotNull
 	private String city;
 
+	@NotNull
 	private String address;
 
+	@NotNull
 	private String zipCode;
 }

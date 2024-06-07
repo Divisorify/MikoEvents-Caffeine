@@ -10,9 +10,9 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import com.example.MikoEvents.user.User;
 
 
-public class ApplicationAuditAware implements AuditorAware<Integer> {
+public class ApplicationAuditAware implements AuditorAware<Long> {
     @Override
-    public Optional<Integer> getCurrentAuditor() {
+	public Optional<Long> getCurrentAuditor() {
         Authentication authentication =
                 SecurityContextHolder
                         .getContext()
