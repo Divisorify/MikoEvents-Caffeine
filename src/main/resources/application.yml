@@ -1,5 +1,6 @@
 spring:
   datasource:
+    #    url: jdbc:postgresql://mikoevents-postgres-1:5433/mikoevents
     url: jdbc:postgresql://localhost:5432/mikoevents
     username: postgres
     password: postgres

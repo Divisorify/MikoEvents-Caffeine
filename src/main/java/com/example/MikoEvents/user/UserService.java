@@ -3,6 +3,7 @@ package com.example.MikoEvents.user;
 import java.security.Principal;
 
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -33,5 +34,10 @@ public class UserService {
 
 		// save the new password
 		userRepository.save(user);
+	}
+
+	public User findByEmail(String username) {
+		return userRepository.findByEmail(username)
+				.orElseThrow(() -> new UsernameNotFoundException("User not found"));
 	}
 }

@@ -8,7 +8,6 @@ FROM maven:3.9.4-amazoncorretto-20-al2023
 #USER java
 #
 #RUN javac MikoEventsApplication.java
-
 #ENTRYPOINT ["java", "MikoEventsApplication"]
 
 COPY . /tmp
