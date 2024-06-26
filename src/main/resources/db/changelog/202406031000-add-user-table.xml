@@ -36,7 +36,7 @@
                 <constraints nullable="false" primaryKey="true" primaryKeyName="tokenPK"/>
             </column>
             <column name="token" type="VARCHAR2(255)"/>
-            <column name="tokenType" type="VARCHAR2(255)"/>
+            <column name="token_type" type="VARCHAR2(255)"/>
             <column name="revoked" type="BOOLEAN"/>
             <column name="expired" type="BOOLEAN"/>
 
