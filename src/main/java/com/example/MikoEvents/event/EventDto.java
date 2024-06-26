@@ -1,6 +1,7 @@
 package com.example.MikoEvents.event;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
@@ -24,10 +25,10 @@ public class EventDto {
 	private LocalDate date;
 
 	@NotNull
-	private LocalDate dateFrom;
+	private LocalDateTime dateFrom;
 
 	@NotNull
-	private LocalDate dateTo;
+	private LocalDateTime dateTo;
 
 	@NotNull
 	private Long locationId;

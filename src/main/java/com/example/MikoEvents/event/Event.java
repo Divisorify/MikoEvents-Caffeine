@@ -1,6 +1,7 @@
 package com.example.MikoEvents.event;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 import com.example.MikoEvents.category.Category;
 import com.example.MikoEvents.location.Location;
@@ -45,10 +46,10 @@ public class Event {
 	private LocalDate date;
 
 	@Column(nullable = false)
-	private LocalDate dateFrom;
+	private LocalDateTime dateFrom;
 
 	@Column(nullable = false)
-	private LocalDate dateTo;
+	private LocalDateTime dateTo;
 
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "location_id", nullable = false)

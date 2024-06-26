@@ -65,10 +65,10 @@
             <column name="date" type="DATE">
                 <constraints nullable="false"/>
             </column>
-            <column name="date_from" type="DATETIME">
+            <column name="date_from" type="TIMESTAMP WITHOUT TIME ZONE">
                 <constraints nullable="false"/>
             </column>
-            <column name="date_to" type="DATETIME">
+            <column name="date_to" type="TIMESTAMP WITHOUT TIME ZONE">
                 <constraints nullable="false"/>
             </column>
 
