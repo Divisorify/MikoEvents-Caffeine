@@ -1,4 +1,10 @@
 spring:
+  #  cache:
+  #    cache-names:
+  #      - location
+  #      - event
+  #    caffeine:
+  #      spec: maximumSize=500, expireAfterAccess=60s
   datasource:
     #    url: jdbc:postgresql://mikoevents-postgres-1:5433/mikoevents
     url: jdbc:postgresql://localhost:5432/mikoevents

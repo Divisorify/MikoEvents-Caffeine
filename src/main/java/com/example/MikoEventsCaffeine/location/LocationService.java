@@ -2,21 +2,28 @@ package com.example.MikoEventsCaffeine.location;
 
 import java.util.List;
 
+import org.springframework.cache.annotation.CacheConfig;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import com.example.MikoEventsCaffeine.exception.ResourceNotFoundException;
 
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
 @Service
 @RequiredArgsConstructor
+@CacheConfig(cacheNames = {"location"})
+@Slf4j
 public class LocationService {
 
 	private final LocationRepository locationRepository;
 	private final LocationMapper locationMapper;
 
+	@Cacheable
 	public List<LocationDto> getAllLocations() {
+		log.info("Caffeine cache miss!");
 		return locationMapper.mapToDto(locationRepository.findAll());
 	}
 
@@ -36,7 +43,6 @@ public class LocationService {
 				.orElseThrow(() -> new ResourceNotFoundException("Location not found"));
 		return locationMapper.mapToDto(location);
 	}
-
 
 	@Transactional
 	public void deleteLocationById(Long id) {
