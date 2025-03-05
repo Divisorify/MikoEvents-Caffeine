@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.example</groupId>
-    <artifactId>MikoEvents</artifactId>
+    <artifactId>MikoEventsCaffeine</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>MikoEvents</name>
-    <description>MikoEvents</description>
+    <name>MikoEventsCaffeine</name>
+    <description>MikoEventsCaffeine</description>
     <properties>
         <java.version>20</java.version>
         <org.mapstruct.version>1.5.1.Final</org.mapstruct.version>
