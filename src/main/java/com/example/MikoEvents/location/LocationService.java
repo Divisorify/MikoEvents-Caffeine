@@ -2,21 +2,28 @@ package com.example.MikoEvents.location;
 
 import java.util.List;
 
+import org.springframework.cache.annotation.CacheConfig;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import com.example.MikoEvents.exception.ResourceNotFoundException;
 
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
 @Service
 @RequiredArgsConstructor
+@CacheConfig(cacheNames = {"location"})
+@Slf4j
 public class LocationService {
 
 	private final LocationRepository locationRepository;
 	private final LocationMapper locationMapper;
 
+	@Cacheable
 	public List<LocationDto> getAllLocations() {
+		log.info("Caffeine cache miss!");
 		return locationMapper.mapToDto(locationRepository.findAll());
 	}
 
