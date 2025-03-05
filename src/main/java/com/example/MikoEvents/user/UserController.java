@@ -2,7 +2,6 @@ package com.example.MikoEvents.user;
 
 import java.security.Principal;
 
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,11 +19,8 @@ public class UserController {
 
 	@ApiOperation(value = "Zmiana hasła")
 	@PatchMapping
-	public ResponseEntity<?> changePassword(
-			@RequestBody ChangePasswordRequest request,
-			Principal connectedUser
-	) {
+	public void changePassword(@RequestBody ChangePasswordRequest request,
+							   Principal connectedUser) {
 		userService.changePassword(request, connectedUser);
-		return ResponseEntity.ok().build();
 	}
 }

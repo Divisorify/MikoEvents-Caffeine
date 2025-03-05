@@ -20,10 +20,10 @@ public class CategoryService {
 		return categoryMapper.mapToDto(categoryRepository.findAll());
 	}
 
-	public void addCategory(CategoryDto CategoryDto) {
+	public void addCategory(CategoryDto categoryDto) {
 		var category = Category.builder()
-				.name(CategoryDto.getName())
-				.categoryType(CategoryDto.getCategoryType())
+				.name(categoryDto.getName())
+				.categoryType(categoryDto.getCategoryType())
 				.build();
 
 		categoryRepository.save(category);
@@ -42,15 +42,15 @@ public class CategoryService {
 	}
 
 	@Transactional
-	public CategoryDto editCategoryById(Long id, CategoryDto CategoryDto) {
+	public CategoryDto editCategoryById(Long id, CategoryDto categoryDto) {
 		var Category = categoryRepository.findById(id)
 				.orElseThrow(() -> new ResourceNotFoundException("Category not found"));
 
-		Category.setName(CategoryDto.getName());
-		Category.setCategoryType(CategoryDto.getCategoryType());
+		Category.setName(categoryDto.getName());
+		Category.setCategoryType(categoryDto.getCategoryType());
 
 		categoryRepository.save(Category);
 
-		return CategoryDto;
+		return categoryDto;
 	}
 }

@@ -2,7 +2,6 @@ package com.example.MikoEvents.auth;
 
 import java.io.IOException;
 
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,14 +21,14 @@ public class AuthenticationController {
 
 	@ApiOperation(value = "Rejestracja użytkownika")
 	@PostMapping("/register")
-	public ResponseEntity<AuthenticationResponse> register(@RequestBody RegisterRequest request) {
-		return ResponseEntity.ok(service.register(request));
+	public AuthenticationResponse register(@RequestBody RegisterRequest request) {
+		return service.register(request);
 	}
 
 	@ApiOperation(value = "Logowanie")
 	@PostMapping("/authenticate")
-	public ResponseEntity<AuthenticationResponse> authenticate(@RequestBody AuthenticationRequest request) {
-		return ResponseEntity.ok(service.authenticate(request));
+	public AuthenticationResponse authenticate(@RequestBody AuthenticationRequest request) {
+		return service.authenticate(request);
 	}
 
 	@ApiOperation(value = "Odświeżanie tokenu")
