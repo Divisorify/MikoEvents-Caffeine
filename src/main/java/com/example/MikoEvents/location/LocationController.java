@@ -1,4 +1,4 @@
-package com.example.MikoEvents.Location;
+package com.example.MikoEvents.location;
 
 import java.util.List;
 
@@ -10,9 +10,6 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.example.MikoEvents.location.LocationDto;
-import com.example.MikoEvents.location.LocationService;
 
 import io.swagger.annotations.ApiOperation;
 import jakarta.validation.Valid;
