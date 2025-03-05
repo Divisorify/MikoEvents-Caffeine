@@ -1,4 +1,4 @@
-package com.example.MikoEventsCaffeine.Location;
+package com.example.MikoEventsCaffeine.location;
 
 import java.util.List;
 
@@ -10,9 +10,6 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.example.MikoEventsCaffeine.location.LocationDto;
-import com.example.MikoEventsCaffeine.location.LocationService;
 
 import io.swagger.annotations.ApiOperation;
 import jakarta.validation.Valid;
