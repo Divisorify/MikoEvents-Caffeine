@@ -13,6 +13,9 @@ import lombok.Setter;
 public class LocationDto {
 
 	@NotNull
+	private Long id;
+
+	@NotNull
 	private String name;
 
 	@NotNull
@@ -21,6 +24,5 @@ public class LocationDto {
 	@NotNull
 	private String address;
 
-	@NotNull
 	private String zipCode;
 }

@@ -1,6 +1,7 @@
 package com.example.MikoEvents.location;
 
 import java.util.List;
+import java.util.Set;
 
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -26,6 +27,12 @@ public class LocationController {
 	@PostMapping
 	public void addLocation(@RequestBody @Valid LocationDto locationDto) {
 		locationService.addLocation(locationDto);
+	}
+
+	@ApiOperation(value = "Dodaj zbiór Location", notes = "Oczekuje: Kolekcje Body/raw/JSON")
+	@PostMapping("/collection")
+	public void addLocation(@RequestBody @Valid Set<LocationDto> locationDtos) {
+		locationService.addLocations(locationDtos);
 	}
 
 	@ApiOperation(value = "Wyświetlanie wszystkich Locationów", notes = "Wyświetlanie wszystkich Locationów")
