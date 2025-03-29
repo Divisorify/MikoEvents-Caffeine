@@ -1,34 +1,23 @@
 spring:
-  cache:
-    type: NONE
+  #  cache:
+  #    cache-names:
+  #      - location
+  #      - event
+  #    caffeine:
+  #      spec: maximumSize=500, expireAfterAccess=60s
   datasource:
     #    url: jdbc:postgresql://mikoevents-postgres-1:5433/mikoevents
     url: jdbc:postgresql://localhost:5432/mikoevents
     username: postgres
     password: postgres
     driver-class-name: org.postgresql.Driver
-  #    hikari:
-  #      maximum-pool-size: 1
-  #      cachePrepStmts: false
-  #      prepStmtCacheSize: 0
-  #      prepStmtCacheSqlLimit: 0
   jpa:
     hibernate:
-      #      cache:
-      #        use_second_level_cache: false
-      #        use_query_cache: false
-      #        region:
-      #          factory_class: org.hibernate.cache.internal.NoCachingRegionFactory
       ddl-auto: update
     show-sql: false
     properties:
       hibernate:
         format_sql: true
-    #        cache:
-    #          use_second_level_cache: false
-    #          use_query_cache: false
-    #          region:
-    #            factory_class: org.hibernate.cache.internal.NoCachingRegionFactory
     database: postgresql
     database-platform: org.hibernate.dialect.PostgreSQLDialect
   liquibase:
